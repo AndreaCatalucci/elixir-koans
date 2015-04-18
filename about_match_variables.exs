@@ -39,4 +39,10 @@ defmodule About_Matches_Variables do
 
         assert a  == __?
     end
+
+    think "Matching strings" do
+        "Pattern matching is " <> how_it_is = "Pattern matching is awesome!!!"
+
+        assert how_it_is == __?
+    end
 end
