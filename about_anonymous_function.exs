@@ -53,4 +53,10 @@ defmodule About_Anonymous_Functions do
 
     end
 
+    think "Shorthand notation is useful but use with care" do
+      double_fun = &(&1 * 2)
+
+      assert double_fun.(2) == __?
+    end
+
 end

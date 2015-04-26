@@ -52,7 +52,7 @@ defmodule About_Numbers_and_booleans do
         assert_? an_integer === a_float
     end
 
-    think "Strict inequality operator take care about types" do
+    think "Strict inequality operator takes care about types" do
         an_integer = 4
         a_float = 4.0
         assert_? an_integer !== a_float

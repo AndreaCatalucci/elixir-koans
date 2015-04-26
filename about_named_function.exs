@@ -26,7 +26,7 @@ defmodule About_Named_Functions do
     def factorial(0) do 1 end
     def factorial(n) do n * factorial(n-1) end
 
-    test "Pattern matching on function named is usefull too" do
+    test "Pattern matching on function named is useful too" do
       assert factorial(3) == __?
     end
 
