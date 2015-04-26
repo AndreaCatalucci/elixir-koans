@@ -3,46 +3,43 @@
 ExUnit.start
 
 defmodule About_Matches_Variables do
-    use ExUnit.Case
-    use Koans
+  use ExUnit.Case
+  use Koans
 
-    think "It's like affecting a variable" do
-        a_variable = 1
-        assert a_variable == __?
-    end
+  think "It's like affecting a variable" do
+    a_variable = 1
+    assert a_variable == __?
+  end
 
-    think "The real operation is named matching" do
-        [a, b] = [1, 2]
+  think "The real operation is named matching" do
+    [a, b] = [1, 2]
 
-        assert a  == __? and b == __?
-    end
+    assert a  == __? and b == __?
+  end
 
-    think "Matching three variables" do
-        [a, b, c] = [1, 2, 3]
+  think "Matching three variables" do
+    [a, b, c] = [1, 2, 3]
+    assert a  == __? and b == __? and c == __?
+  end
 
-        assert a  == __? and b == __? and c == __?
-    end
+  think "Matching one variable and drop a value" do
+    [a, _] = ["Keep me", "Drop me"]
+    assert a  == __?
+  end
 
-    think "Matching one variable and drop a value" do
-        [a, _] = ["Keep me", "Drop me"]
+  think "Error matching" do
+    assert_raise __?, fn -> [ a , a ] = [ 1 , 2 ] end
+  end
 
-        assert a  == __?
-    end
+  think "Matching an array inner an array" do
+    [ a ] = [ ["Hello", "World !"] ]
 
-    think "Error matching" do
+    assert a  == __?
+  end
 
-        assert_raise __?, fn -> [ a , a ] = [ 1 , 2 ] end
-    end
+  think "Matching strings" do
+    "Pattern matching is " <> how_it_is = "Pattern matching is awesome!!!"
 
-    think "Matching an array inner an array" do
-        [ a ] = [ ["Hello", "World !"] ]
-
-        assert a  == __?
-    end
-
-    think "Matching strings" do
-        "Pattern matching is " <> how_it_is = "Pattern matching is awesome!!!"
-
-        assert how_it_is == __?
-    end
+    assert how_it_is == __?
+  end
 end
