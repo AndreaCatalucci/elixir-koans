@@ -46,7 +46,7 @@ defmodule About_Lists do
     result = a_list 
               |> Enum.filter(&(&1 < 4))
               |> Enum.map(fn e -> e*2 end)
-              |> Enum.reduce(&(&1+&2))
+              |> Enum.reduce(&+/2))
     assert result ==  __?
   end
 
