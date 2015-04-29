@@ -9,12 +9,6 @@ Install
   $ cd elixir-koans
 ```
 
-Compile
-
-```bash
-  $ elixirc utils/Koans.ex
-```
-
 Launch
 -------
 
