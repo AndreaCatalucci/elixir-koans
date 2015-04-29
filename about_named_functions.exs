@@ -10,7 +10,7 @@ defmodule About_Named_Functions do
     "Hello #{name}"
   end
 
-  think "Declaring and using a named function" do
+  test "Declaring and using a named function" do
     assert hello("world!") == __?
   end
 
@@ -18,14 +18,14 @@ defmodule About_Named_Functions do
     "Hello #{name} from #{country}"
   end
 
-  think "Functions are identified by name and number of parameter" do
+  test "Functions are identified by name and number of parameter" do
     assert hello("world", "France!") == __?
   end
 
   def factorial(0) do 1 end
   def factorial(n) do n * factorial(n-1) end
 
-  think "Pattern matching on function named is useful too" do
+  test "Pattern matching on function named is useful too" do
     assert factorial(3) == __?
   end
 
@@ -41,7 +41,7 @@ defmodule About_Named_Functions do
     "#{value} is a number"
   end
 
-  think "Pattern matching on type with guard clause" do
+  test "Pattern matching on type with guard clause" do
     assert i_can_identify_type(4.2) == __?
     assert i_can_identify_type(:atom) == __?
     assert i_can_identify_type(5) == __?
