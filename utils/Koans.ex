@@ -10,7 +10,9 @@ defmodule Koans do
     @doc false
     defmacro __using__([]) do
         quote do
+            ExUnit.start
             import Koans, only: [__?: 0, __?: 1, __?: 2, assert_?: 1, assert_?: 2, meditate: 1, think: 2]
+            think "something is not correct", do: assert true
         end
     end
 
