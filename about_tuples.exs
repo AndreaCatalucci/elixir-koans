@@ -6,12 +6,12 @@ defmodule About_Tuples do
   use ExUnit.Case
   use Koans
 
-  think "Getting tuples size is a kernel feature" do
+  test "Getting tuples size is a kernel feature" do
     a_tuple = {:foo, :bar}
     assert tuple_size(a_tuple) == __?
   end
 
-  think "Can reach tuple element with index" do
+  test "Can reach tuple element with index" do
     a_tuple = {:foo, :bar}
     assert elem(a_tuple, 0) == __?
   end
@@ -27,7 +27,7 @@ defmodule About_Tuples do
     assert elem(a_tuple, foo_index) == erlang_elem(a_tuple, foo_index + __?)
   end
 
-  think "Can set a tuple element" do
+  test "Can set a tuple element" do
     a_tuple = {:foo, :bar}
     baz_tuple = put_elem(a_tuple, 0, :baz)
     # Note: think about immutability
@@ -35,24 +35,24 @@ defmodule About_Tuples do
     assert elem(baz_tuple, 0) == __?
   end
 
-  think "Setting a tuple element that not exists raise an argument error" do
+  test "Setting a tuple element that not exists raise an argument error" do
     a_tuple = {:foo, :bar}
 
     assert_raise ArgumentError, fn -> put_elem(a_tuple, __?, :baz) end
   end
 
-  think "Can insert a tuple element" do
+  test "Can insert a tuple element" do
     a_tuple = {:foo, :bar}
     baz_tuple = Tuple.insert_at(a_tuple, 2, :baz)
     assert elem(baz_tuple, 2) == __?
   end
 
-  think "Inserting a tuple element raise an argument error if index is invalid" do
+  test "Inserting a tuple element raise an argument error if index is invalid" do
     a_tuple = {:foo, :bar}
     assert_raise ArgumentError, fn -> Tuple.insert_at(a_tuple, __?, :baz) end
   end
 
-  think "The building blocks of Elixir are tuples of three elements" do
+  test "The building blocks of Elixir are tuples of three elements" do
     # Note: quote gives the representation of a block
     quoted_block = quote do
         a = 1 + 2
@@ -75,7 +75,7 @@ defmodule About_Tuples do
     assert unquoted_block == __?
   end
 
-  think "Are tuples enumerables ?" do
+  test "Are tuples enumerables ?" do
     invalid_argument   = ArgumentError
     undefined_protocol = Protocol.UndefinedError
 
